@@ -6,7 +6,25 @@
         "id": "1",
         "item": "Ara'yes",
         "description": "Ground beef seasoned with a blend of spices, stuffed inside pita bread, and grilled to perfection.",
-        "price": "$9.00"
+        "price": "$9.00",
+        "modifiers": [
+          {
+            "name": "Sides",
+            "options": [
+              "Fries",
+              "Rice",
+              "Salad"
+            ]
+          },
+          {
+            "name": "Sauces",
+            "options": [
+              "Mayo",
+              "Ketchup",
+              "Garlic"
+            ]
+          }
+        ]
       },
       {
         "id": "2",

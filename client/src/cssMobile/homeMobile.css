@@ -1,9 +1,14 @@
 @media screen and (max-width: 1200px) {
-    body {
-        overflow: hidden;
+
+    .hero img {
+        width: auto;
+        height: auto;
+        min-height: 300px;
     }
 
-
+    .menu-items-wrapper {
+        justify-content: center;
+    }
 
     .menu-item {
         width: 95%;
