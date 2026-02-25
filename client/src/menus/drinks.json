@@ -1,0 +1,289 @@
+[
+  {
+    "category": "Appetizers",
+    "items": [
+      {
+        "id": "1",
+        "item": "Ara'yes",
+        "description": "Ground beef seasoned with a blend of spices, stuffed inside pita bread, and grilled to perfection.",
+        "price": "$9.00"
+      },
+      {
+        "id": "2",
+        "item": "Cigars",
+        "description": "5 hand-rolled thin pastry filled with mashed potato and a blend of spices, offering a crispy exterior and rich, savory flavor.",
+        "price": "$9.00"
+      },
+      {
+        "id": "3",
+        "item": "Chicken Wings",
+        "description": "5 bone-in chicken wings grilled with a kick.",
+        "price": "$9.00"
+      },
+      {
+        "id": "4",
+        "item": "Mushroom Kibbeh",
+        "description": "Mushroom stuffed in a bulgur wheat shell, shaped into crispy, golden-brown ovals for a delightful crunch.",
+        "price": "$9.00"
+      }
+    ]
+  },
+  {
+    "category": "Hummus Menu",
+    "items": [
+      {
+        "id": "5",
+        "item": "House Hummus",
+        "description": "A creamy blend of chickpeas and tahini, accentuated with a hint of garlic, served with a drizzle of olive oil and a sprinkle of paprika. Served with a fresh pita.",
+        "price": "$12.00"
+      },
+      {
+        "id": "6",
+        "item": "Hummus & Falafel",
+        "description": "Falafel and hummus plate. Served with a fresh pita.",
+        "price": "$14.00"
+      },
+      {
+        "id": "7",
+        "item": "Hummus & Shawarma",
+        "description": "Creamy hummus topped with tender, spiced shawarma, accompanied by some pickled vegetables. Served with fresh pita bread.",
+        "price": "$16.00"
+      }
+    ]
+  },
+  {
+    "category": "Sandwiches",
+    "items": [
+      {
+        "id": "8",
+        "item": "Sabich",
+        "description": "Fried eggplants, boiled egg, sliced potato with your choice of toppings. Comes with French Fries.",
+        "price": "$10.00"
+      },
+      {
+        "id": "9",
+        "item": "Schnitzel",
+        "description": "Thin slice of meat, pounded tender, breaded, and then fried. Comes with French Fries.",
+        "price": "$15.00"
+      },
+      {
+        "id": "10",
+        "item": "Falafel",
+        "description": "Falafel balls stuffed in a pita or baguette with your choice of salads. Comes with French Fries.",
+        "price": "$10.00"
+      },
+      {
+        "id": "11",
+        "item": "Shawarma",
+        "description": "Thinly sliced meat that has been slowly roasted and served inside of the bread of your choice with salads. Comes with French Fries.",
+        "price": "$15.00"
+      },
+      {
+        "id": "12",
+        "item": "Roasted Baby Chicken",
+        "description": "Grilled Chicken placed inside of Pita Bread. Comes with French Fries.",
+        "price": "$15.00"
+      },
+      {
+        "id": "13",
+        "item": "Grilled Chicken",
+        "description": "Grilled Chicken placed inside of Pita Bread. Comes with French Fries.",
+        "price": "$15.00"
+      },
+      {
+        "id": "14",
+        "item": "Kabab",
+        "description": "Grilled Kabab inside of Pita Bread. Comes with French Fries.",
+        "price": "$15.00"
+      }
+    ]
+  },
+  {
+    "category": "Burgers",
+    "items": [
+      {
+        "id": "15",
+        "item": "Hamburger",
+        "description": "Beef patty grilled to your perfection. Served on a bun with French Fries.",
+        "price": "$18.00 - $26.00"
+      },
+      {
+        "id": "16",
+        "item": "Egg Burger",
+        "description": "Beef patty grilled to your perfection with an egg on top. Served in a bun with French Fries.",
+        "price": "$21.00 - $29.00"
+      },
+      {
+        "id": "17",
+        "item": "Fried Onion Burger",
+        "description": "Beef patty grilled to your perfection with Fried Onions placed on top. Served in a bun with French Fries.",
+        "price": "$21.00 - $28.00"
+      },
+      {
+        "id": "18",
+        "item": "Mushroom Burger",
+        "description": "Beef patty grilled to your perfection with Grilled Mushrooms placed on top. Served in a bun with French Fries.",
+        "price": "$21.00 - $29.00"
+      },
+      {
+        "id": "19",
+        "item": "Beyond Burger",
+        "description": "Vegetarian burger served in a bun with French Fries.",
+        "price": "$21.00"
+      }
+    ]
+  },
+  {
+    "category": "Main Dishes",
+    "items": [
+      {
+        "id": "20",
+        "item": "Grilled Salmon",
+        "description": "A Plate of Grilled Salmon with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$22.00"
+      },
+      {
+        "id": "21",
+        "item": "Shawarma",
+        "description": "A Plate of Shawarma meat with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$23.00"
+      },
+      {
+        "id": "22",
+        "item": "Roasted Baby Chicken",
+        "description": "A Plate of Roasted Chicken with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$23.00"
+      },
+      {
+        "id": "23",
+        "item": "Schnitzel",
+        "description": "A Plate of a thin, pounded, and breaded pan-fried meat with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$23.00"
+      },
+      {
+        "id": "24",
+        "item": "Grilled Chicken",
+        "description": "A Plate of Grilled Chicken with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$22.00"
+      },
+      {
+        "id": "25",
+        "item": "Kabab",
+        "description": "A Plate of Kabab with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$23.00"
+      },
+      {
+        "id": "26",
+        "item": "Ribeye Steak",
+        "description": "A Plate of Ribeye Steak grilled to your perfection. Served with your choice of Rice, French Fries, or Israeli Salad.",
+        "price": "$38.00"
+      }
+    ]
+  },
+  {
+    "category": "Salads",
+    "items": [
+      {
+        "id": "27",
+        "item": "Hummus",
+        "description": "A Bowl of some creamy Hummus",
+        "price": "$4.00"
+      },
+      {
+        "id": "28",
+        "item": "Tahini",
+        "description": "A Sesame Seed Paste to add some flavor",
+        "price": "$4.00"
+      },
+      {
+        "id": "29",
+        "item": "Purple Cabbage",
+        "description": "Purple Cabbage to add some color to your plate",
+        "price": "$4.00"
+      },
+      {
+        "id": "30",
+        "item": "White Cabbage",
+        "description": "White Cabbage fresh and crisp",
+        "price": "$4.00"
+      },
+      {
+        "id": "31",
+        "item": "Matbucha",
+        "description": "A savory blend of ripe tomatoes and roasted bell peppers, simmered with a mix of aromatic spices.",
+        "price": "$4.00"
+      },
+      {
+        "id": "32",
+        "item": "Beets",
+        "description": "Fresh roasted Beets",
+        "price": "$4.00"
+      },
+      {
+        "id": "33",
+        "item": "Spicy Carrots",
+        "description": "Plate of Shredded Spicy Carrots",
+        "price": "$4.00"
+      },
+      {
+        "id": "34",
+        "item": "Fried Eggplant",
+        "description": "Fried Eggplant",
+        "price": "$4.00"
+      },
+      {
+        "id": "35",
+        "item": "Corn",
+        "description": "Corn Salad",
+        "price": "$4.00"
+      },
+      {
+        "id": "36",
+        "item": "Olive Dip",
+        "description": "A Spread that combines chopped olives and a creamy base with herbs and spices",
+        "price": "$4.00"
+      },
+      {
+        "id": "37",
+        "item": "Egg",
+        "description": "Egg Salad",
+        "price": "$4.00"
+      },
+      {
+        "id": "38",
+        "item": "Full Table",
+        "description": "Get a Tray with all of our Salad Options. Comes with 2 Pita Breads.",
+        "price": "$36.00"
+      }
+    ]
+  },
+  {
+    "category": "Drinks",
+    "items": [
+      {
+        "id": "39",
+        "item": "Coke",
+        "description": "A can of coke",
+        "price": "$5.00"
+      },
+      {
+        "id": "40",
+        "item": "Coke Zero",
+        "description": "A can of coke zero",
+        "price": "$5.00"
+      },
+      {
+        "id": "41",
+        "item": "Sprite",
+        "description": "A can of sprite",
+        "price": "$5.00"
+      },
+      {
+        "id": "42",
+        "item": "Water",
+        "description": "A bottle of water",
+        "price": "$5.00"
+      }
+    ]
+  }
+]
