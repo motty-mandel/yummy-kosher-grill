@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import menuList from '../menus/drinks.json';
+import { CartContext } from '../context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.css';
 import '../cssMobile/homeMobile.css';
@@ -9,6 +10,7 @@ export default function Home() {
     const [activeId, setActiveId] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedModifiers, setSelectedModifiers] = useState({});
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         if (selectedItem) {
@@ -119,7 +121,16 @@ export default function Home() {
                                 </div>
                             ) : null}
                             
-                            <button className="add-to-cart-btn">Add to Cart</button>
+                            <button 
+                                className="add-to-cart-btn"
+                                onClick={() => {
+                                    addToCart(selectedItem, 1, selectedModifiers);
+                                    setSelectedItem(null);
+                                    setSelectedModifiers({});
+                                }}
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>

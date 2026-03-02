@@ -1,15 +1,17 @@
 import './App.css';
+import { Outlet } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 import Header from './jsx/Header';
-import Home from './jsx/Home';
+import CartSidebar from './jsx/CartSidebar';
 
 function App() {
-
   return (
-    <div>
+    <CartProvider>
       <Header />
-        <Home />
-    </div>
-  )
+      <CartSidebar />
+      <Outlet />
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;
