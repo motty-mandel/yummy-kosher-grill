@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import '../css/CartSidebar.css';
 
 export default function CartSidebar() {
+  const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart, isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   useEffect(() => {
@@ -101,7 +103,15 @@ export default function CartSidebar() {
 
             <div className="sidebar-actions">
               <button onClick={() => clearCart()} className="clear-btn">Clear Cart</button>
-              <button className="checkout-btn">Checkout</button>
+              <button 
+                onClick={() => {
+                  setIsCartOpen(false);
+                  navigate('/checkout');
+                }}
+                className="checkout-btn"
+              >
+                Checkout
+              </button>
             </div>
           </>
         )}

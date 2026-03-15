@@ -5,6 +5,28 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [orderInfo, setOrderInfo] = useState({
+    fulfillmentType: 'pickup', // 'eatIn', 'pickup', 'delivery'
+    customerInfo: {
+      name: '',
+      phone: '',
+      email: '',
+    },
+    eatInDetails: {
+      tableNumber: '',
+    },
+    pickupDetails: {
+      pickupTime: '',
+    },
+    deliveryDetails: {
+      address: '',
+      city: '',
+      zip: '',
+      phone: '',
+      deliveryTime: '',
+      specialInstructions: '',
+    },
+  });
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -84,6 +106,34 @@ export function CartProvider({ children }) {
     return cartItems.reduce((count, item) => count + item.quantity, 0);
   };
 
+  const updateOrderInfo = (updates) => {
+    setOrderInfo((prevInfo) => ({
+      ...prevInfo,
+      ...updates,
+    }));
+  };
+
+  const updateCustomerInfo = (customerData) => {
+    setOrderInfo((prevInfo) => ({
+      ...prevInfo,
+      customerInfo: {
+        ...prevInfo.customerInfo,
+        ...customerData,
+      },
+    }));
+  };
+
+  const updateFulfillmentDetails = (fulfillmentType, details) => {
+    const detailsKey = `${fulfillmentType}Details`;
+    setOrderInfo((prevInfo) => ({
+      ...prevInfo,
+      [detailsKey]: {
+        ...prevInfo[detailsKey],
+        ...details,
+      },
+    }));
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -96,6 +146,10 @@ export function CartProvider({ children }) {
         getCartCount,
         isCartOpen,
         setIsCartOpen,
+        orderInfo,
+        updateOrderInfo,
+        updateCustomerInfo,
+        updateFulfillmentDetails,
       }}
     >
       {children}

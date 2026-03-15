@@ -93,7 +93,7 @@
 
 .item-price {
   font-weight: bold;
-  color: #2c5f2d;
+  color: #cf5a00;
   margin: 3px 0;
   font-size: 14px;
 }
@@ -129,7 +129,7 @@
   border: none;
   font-size: 16px;
   font-weight: bold;
-  color: #2c5f2d;
+  color: #cf5a00;
   cursor: pointer;
   width: 24px;
   height: 24px;
@@ -140,7 +140,7 @@
 }
 
 .quantity-selector button:hover {
-  color: #1f4620;
+  color: #cf5a00;
 }
 
 .quantity-selector span {
@@ -182,7 +182,7 @@
 .summary-row.total {
   font-size: 16px;
   font-weight: bold;
-  color: #2c5f2d;
+  color: #cf5a00;
   border-top: 1px solid #ddd;
   padding-top: 10px;
   margin-top: 10px;
@@ -215,7 +215,7 @@
 
 .checkout-btn {
   flex: 1;
-  background-color: #28a745;
+  background-color: #cf5a00;
   color: white;
   border: none;
   padding: 10px;
@@ -227,7 +227,7 @@
 }
 
 .checkout-btn:hover {
-  background-color: #218838;
+  background-color: #cf5a00;
 }
 
 @media screen and (max-width: 768px) {
