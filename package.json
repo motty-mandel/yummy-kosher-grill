@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "serverInstall": "cd server && npm install",
-    "serverStart": "cd server && npm run start"
+    "serverStart": "cd server && npm run start",
+    "build": "cd client && npm install && npm run build && cd ../server && npm install"
   }
 }
