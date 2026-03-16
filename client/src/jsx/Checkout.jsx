@@ -92,7 +92,7 @@ export default function Checkout() {
       };
 
       // Save order to backend
-      const orderResponse = await fetch(`${API_URL}/orders`, {
+      const orderResponse = await fetch(`${API_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ export default function Checkout() {
         orderNumber: orderNumber,
       };
 
-      const printResponse = await fetch(`${API_URL}/printer/receipt`, {
+      const printResponse = await fetch(`${API_URL}/api/printer/receipt`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
