@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 import '../css/Checkout.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const API_URL = 'https://yummy-kosher-grill.onrender.com/';
+const API_URL = 'https://yummy-kosher-grill.onrender.com';
 
 export default function Checkout() {
   const navigate = useNavigate();
