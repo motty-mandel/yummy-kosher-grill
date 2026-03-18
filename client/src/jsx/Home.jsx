@@ -4,7 +4,7 @@ import { CartContext } from '../context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.css';
 import '../cssMobile/homeMobile.css';
-import arayes from '../menuImages/arayes.jpg';
+import arayes from '../assets/new-pargit.jpg';
 
 export default function Home() {
     const [activeId, setActiveId] = useState(null);
@@ -56,12 +56,12 @@ export default function Home() {
                                 onClick={() => setSelectedItem(menuItems)}
                             >
                                 <div className="itemInfo">
-                                    <h4>{menuItems.item}</h4>
-                                    <h5>{menuItems.description}</h5>
-                                    <h5>{menuItems.price}</h5>
+                                    <h5>{menuItems.item}</h5>
+                                    <h6>{menuItems.price}</h6>
+                                    <h6 className="description">{menuItems.description}</h6>
                                 </div>
                                 <div className="itemImage">
-                                    <img src={arayes} alt="" />
+                                    <img src={menuItems.image} alt="menu-item-photo" />
                                 </div>
                             </div>
                         ))}
@@ -75,7 +75,7 @@ export default function Home() {
                         <button className="close-btn" onClick={() => setSelectedItem(null)}>×</button>
                         
                         <div className="modal-image">
-                            <img src={arayes} alt={selectedItem.item} />
+                            <img src={selectedItem.image} alt={selectedItem.item} />
                         </div>
                         
                         <div className="modal-details">
