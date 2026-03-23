@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import menuList from '../menus/drinks.json';
+import menuList from '../menus/menu.json';
 import { CartContext } from '../context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.css';
@@ -10,11 +10,13 @@ export default function Home() {
     const [activeId, setActiveId] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedModifiers, setSelectedModifiers] = useState({});
+    const [validationError, setValidationError] = useState(null);
     const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         if (selectedItem) {
             document.body.style.overflow = 'hidden';
+            setValidationError(null);
         } else {
             document.body.style.overflow = 'unset';
         }
@@ -38,15 +40,15 @@ export default function Home() {
                     </h3>
                     <h6>
                         Opening Hours <br />
-                        Sunday: 12:30PM - 8PM <br />
+                        Sunday: 12PM - 8PM <br />
                         Monday - Thursday: 12PM - 8PM <br />
-                        Friday: 12PM - 4PM
+                        Friday: Closed
                     </h6>
                 </div>
                 <img src="grill-food.jpg" alt="picture-of-grilled-food" />
             </div>
             {menuList.map((category) => (
-                <div key={category.category}>
+                <div className="categories" key={category.category}>
                     <h2 className="my-2 mx-5">{category.category}</h2>
                     <div className="menu-items-wrapper">
                         {category.items.map((menuItems) => (
@@ -86,51 +88,106 @@ export default function Home() {
                             {selectedItem.modifiers && selectedItem.modifiers.length > 0 ? (
                                 <div className="modifiers-section">
                                     <h4>Modify Your Order</h4>
-                                    {selectedItem.modifiers.map((modifier) => (
-                                        <div key={modifier.name} className="modifier-group">
-                                            <h5>{modifier.name}</h5>
-                                            <div className="checkbox-group">
-                                                {modifier.options.map((option) => (
-                                                    <label key={option} className="checkbox-label">
-                                                        <input
-                                                            type="checkbox"
-                                                            value={option}
-                                                            checked={selectedModifiers[modifier.name]?.includes(option) || false}
-                                                            onChange={(e) => {
-                                                                const key = modifier.name;
-                                                                const current = selectedModifiers[key] || [];
-                                                                if (e.target.checked) {
-                                                                    setSelectedModifiers({
-                                                                        ...selectedModifiers,
-                                                                        [key]: [...current, option]
-                                                                    });
-                                                                } else {
-                                                                    setSelectedModifiers({
-                                                                        ...selectedModifiers,
-                                                                        [key]: current.filter(item => item !== option)
-                                                                    });
-                                                                }
-                                                            }}
-                                                        />
-                                                        {option}
-                                                    </label>
-                                                ))}
+                                    {selectedItem.modifiers.map((modifier) => {
+                                        const isRadio = modifier.type === 'radio';
+                                        const isRequired = modifier.required;
+                                        const maxSelections = modifier.maxSelections;
+                                        const currentSelections = selectedModifiers[modifier.name] || [];
+                                        const isLimitReached = maxSelections && currentSelections.length >= maxSelections;
+                                        
+                                        return (
+                                            <div key={modifier.name} className="modifier-group">
+                                                <h5>
+                                                    {modifier.name}
+                                                    {isRequired && <span className="required-indicator"> *</span>}
+                                                </h5>
+                                                {maxSelections && (
+                                                    <p className="selection-limit">
+                                                        Select up to {maxSelections} option{maxSelections !== 1 ? 's' : ''}
+                                                    </p>
+                                                )}
+                                                <div className={isRadio ? 'radio-group' : 'checkbox-group'}>
+                                                    {modifier.options.map((option) => (
+                                                        <label key={option} className={isRadio ? 'radio-label' : 'checkbox-label'}>
+                                                            <input
+                                                                type={isRadio ? 'radio' : 'checkbox'}
+                                                                name={isRadio ? modifier.name : undefined}
+                                                                value={option}
+                                                                checked={currentSelections.includes(option)}
+                                                                disabled={isRadio ? false : (isLimitReached && !currentSelections.includes(option))}
+                                                                onChange={(e) => {
+                                                                    const key = modifier.name;
+                                                                    const current = selectedModifiers[key] || [];
+                                                                    
+                                                                    if (isRadio) {
+                                                                        // Radio: only one selection allowed
+                                                                        setSelectedModifiers({
+                                                                            ...selectedModifiers,
+                                                                            [key]: [option]
+                                                                        });
+                                                                    } else {
+                                                                        // Checkbox: respect maxSelections
+                                                                        if (e.target.checked) {
+                                                                            if (!maxSelections || current.length < maxSelections) {
+                                                                                setSelectedModifiers({
+                                                                                    ...selectedModifiers,
+                                                                                    [key]: [...current, option]
+                                                                                });
+                                                                            }
+                                                                        } else {
+                                                                            setSelectedModifiers({
+                                                                                ...selectedModifiers,
+                                                                                [key]: current.filter(item => item !== option)
+                                                                            });
+                                                                        }
+                                                                    }
+                                                                }}
+                                                            />
+                                                            {option}
+                                                        </label>
+                                                    ))}
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        );
+                                    })}
                                 </div>
                             ) : null}
                             
                             <button 
                                 className="add-to-cart-btn"
                                 onClick={() => {
+                                    // Validate required modifiers
+                                    const errors = [];
+                                    if (selectedItem.modifiers) {
+                                        selectedItem.modifiers.forEach((modifier) => {
+                                            if (modifier.required) {
+                                                const selected = selectedModifiers[modifier.name] || [];
+                                                if (selected.length === 0) {
+                                                    errors.push(`Please select ${modifier.name.toLowerCase()}`);
+                                                }
+                                            }
+                                        });
+                                    }
+                                    
+                                    if (errors.length > 0) {
+                                        setValidationError(errors.join(', '));
+                                        return;
+                                    }
+                                    
                                     addToCart(selectedItem, 1, selectedModifiers);
                                     setSelectedItem(null);
                                     setSelectedModifiers({});
+                                    setValidationError(null);
                                 }}
                             >
                                 Add to Cart
                             </button>
+                            
+                            {validationError && (
+                                <div className="error-message">
+                                    {validationError}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

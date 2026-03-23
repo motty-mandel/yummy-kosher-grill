@@ -211,35 +211,170 @@
         "item": "Hamburger / המבורגר הבית",
         "description": "Beef patty grilled to your perfection. Served on a bun with French Fries.",
         "price": "$18.00 - $26.00",
-        "image": "https://www.fbgcdn.com/pictures/95fe102b-7918-436c-a3ad-a143411e6c51_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/95fe102b-7918-436c-a3ad-a143411e6c51_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Size (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 1,
+            "options": [
+              "150g",
+              "220g + $4",
+              "300g + $8"
+            ]
+          },
+          {
+            "name": "Hamburger Extras / תוספות להמבורגר",
+            "options": [
+              "Tomato / עגבנייה",
+              "Pickels / מלפפון חמוץ",
+              "Lettuce / חסה"
+            ]
+          },
+          {
+            "name": "French fries / צ'יפס",
+            "options": [
+              "French fries / צ'יפס "
+            ]
+          }
+        ]
       },
       {
         "id": "16",
         "item": "Egg Burger / המבורגר ביצת עין",
         "description": "Beef patty grilled to your perfection with an egg on top. Served in a bun with French Fries.",
         "price": "$21.00 - $29.00",
-        "image": "https://www.fbgcdn.com/pictures/0e886809-6019-4ac0-aae9-9d8aadfcacca_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/0e886809-6019-4ac0-aae9-9d8aadfcacca_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Size (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 1,
+            "options": [
+              "150g",
+              "220g + $4",
+              "300g + $8"
+            ]
+          },
+          {
+            "name": "Hamburger Extras / תוספות להמבורגר",
+            "options": [
+              "Tomato / עגבנייה",
+              "Pickels / מלפפון חמוץ",
+              "Lettuce / חסה"
+            ]
+          },
+          {
+            "name": "French fries / צ'יפס",
+            "options": [
+              "French fries / צ'יפס "
+            ]
+          }
+        ]
       },
       {
         "id": "17",
         "item": "Fried Onion Burger / המבורגר בצל מתוגן",
         "description": "Beef patty grilled to your perfection with Fried Onions placed on top. Served in a bun with French Fries.",
         "price": "$21.00 - $28.00",
-        "image": "https://www.fbgcdn.com/pictures/3e2a1c61-2b3d-44a6-9bb5-11b3bd2e4b0b_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/3e2a1c61-2b3d-44a6-9bb5-11b3bd2e4b0b_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Size (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 1,
+            "options": [
+              "150g",
+              "220g + $4",
+              "300g + $8"
+            ]
+          },
+          {
+            "name": "Hamburger Extras / תוספות להמבורגר",
+            "options": [
+              "Tomato / עגבנייה",
+              "Pickels / מלפפון חמוץ",
+              "Lettuce / חסה"
+            ]
+          },
+          {
+            "name": "French fries / צ'יפס",
+            "options": [
+              "French fries / צ'יפס "
+            ]
+          }
+        ]
       },
       {
         "id": "18",
         "item": "Mushroom Burger / המבורגר פטריות",
         "description": "Beef patty grilled to your perfection with Grilled Mushrooms placed on top. Served in a bun with French Fries.",
         "price": "$21.00 - $29.00",
-        "image": "https://www.fbgcdn.com/pictures/ee2c0651-7215-43e3-a50f-138c9afaa7a9_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/ee2c0651-7215-43e3-a50f-138c9afaa7a9_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Size (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 1,
+            "options": [
+              "150g",
+              "220g + $4",
+              "300g + $8"
+            ]
+          },
+          {
+            "name": "Hamburger Extras / תוספות להמבורגר",
+            "options": [
+              "Tomato / עגבנייה",
+              "Pickels / מלפפון חמוץ",
+              "Lettuce / חסה"
+            ]
+          },
+          {
+            "name": "French fries / צ'יפס",
+            "options": [
+              "French fries / צ'יפס "
+            ]
+          }
+        ]
       },
       {
         "id": "19",
         "item": "Beyond Burger",
         "description": "Vegetarian burger served in a bun with French Fries.",
         "price": "$21.00",
-        "image": "https://www.fbgcdn.com/pictures/7718e78a-1d54-46b8-aac4-76323cd8cf3c_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/7718e78a-1d54-46b8-aac4-76323cd8cf3c_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Size (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 1,
+            "options": [
+              "150g",
+              "220g + $4",
+              "300g + $8"
+            ]
+          },
+          {
+            "name": "Hamburger Extras / תוספות להמבורגר",
+            "options": [
+              "Tomato / עגבנייה",
+              "Pickels / מלפפון חמוץ",
+              "Lettuce / חסה"
+            ]
+          },
+          {
+            "name": "French fries / צ'יפס",
+            "options": [
+              "French fries / צ'יפס "
+            ]
+          }
+        ]
       }
     ]
   },
@@ -249,51 +384,142 @@
       {
         "id": "20",
         "item": "Grilled Salmon / דג סלמון",
-        "description": "A Plate of Grilled Salmon with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Grilled Salmon with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$22.00",
-        "image": "https://www.fbgcdn.com/pictures/4aab9d56-56db-4ff6-b0ef-91192f49cc2f_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/4aab9d56-56db-4ff6-b0ef-91192f49cc2f_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "21",
         "item": "Shawarma / שוורמה",
-        "description": "A Plate of Shawarma meat with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Shawarma meat with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
-        "image": "https://www.fbgcdn.com/pictures/5e35daff-4ae1-4aaf-80da-7cf4d378d85f_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/5e35daff-4ae1-4aaf-80da-7cf4d378d85f_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "22",
         "item": "Roast Baby Chicken / פרגית על האש",
-        "description": "A Plate of Roasted Chicken with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Roasted Chicken with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
-        "image": "https://www.fbgcdn.com/pictures/39d77124-517e-4409-af20-717907a72d01_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/39d77124-517e-4409-af20-717907a72d01_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "23",
         "item": "Schnitzel / שניצל",
-        "description": "A Plate of a thin, pounded, and breaded pan-fried meat with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of a thin, pounded, and breaded pan-fried meat with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
-        "image": "https://www.fbgcdn.com/pictures/b4153176-a7d4-4dc7-b2d7-bc60d3bdc37b_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/b4153176-a7d4-4dc7-b2d7-bc60d3bdc37b_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "24",
         "item": "Grilled Chicken / חזה עוף",
-        "description": "A Plate of Grilled Chicken with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Grilled Chicken with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$22.00",
-        "image": "https://www.fbgcdn.com/pictures/239dc26b-0af0-40cc-ba9f-2ae267c398f9_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/239dc26b-0af0-40cc-ba9f-2ae267c398f9_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "25",
         "item": "Kabab / קבב",
-        "description": "A Plate of Kabab with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Kabab with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
-        "image": "https://www.fbgcdn.com/pictures/de22f483-9cdf-4756-98e3-3624500c755d_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/de22f483-9cdf-4756-98e3-3624500c755d_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       },
       {
         "id": "26",
         "item": "Ribeye Steak / סטייק עין",
-        "description": "A Plate of Ribeye Steak grilled to your perfection. Served with your choice of Rice, French Fries, or Israeli Salad.",
+        "description": "A Plate of Ribeye Steak grilled to your perfection. Served with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$38.00",
-        "image": "https://www.fbgcdn.com/pictures/5dc98a4f-2982-4547-849e-86313cae7cb2_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/5dc98a4f-2982-4547-849e-86313cae7cb2_d3.jpg",
+        "modifiers": [
+          {
+            "name": "Plate sides / תוספות לצלחת (Required)",
+            "type": "checkbox",
+            "required": true,
+            "maxSelections": 2,
+            "options": [
+              "Rice / אורז",
+              "French fries / צ'יפס",
+              "Israeli salad / סלט ישראלי"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -366,7 +592,7 @@
       {
         "id": "36",
         "item": "Olive Dip / סלי זיתים",
-        "description": "A Spread that combines chopped olives and a creamy base with herbs and spices",
+        "description": "A tasty spread of chopped olives",
         "price": "$4.00",
         "image": "https://www.fbgcdn.com/pictures/cfeadbcb-d228-4fa4-9d3d-cc87aa217998_d3.jpg"
       },

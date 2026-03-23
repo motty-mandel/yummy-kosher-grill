@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
 import '../css/Checkout.css';
@@ -145,6 +145,26 @@ export default function Checkout() {
   const total = getCartTotal();
   const tax = (total * 0.0825).toFixed(2);
   const grandTotal = (parseFloat(total) + parseFloat(tax)).toFixed(2);
+
+  // Ensure page is scrolled to top when the checkout mounts
+  useEffect(() => {
+    try {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+    } catch (e) {
+      // ignore in older browsers
+    }
+  }, []);
+
+  // Scroll to top when switching steps so mobile users see the form header
+  useEffect(() => {
+    try {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+    } catch (e) {
+      // ignore
+    }
+  }, [step]);
 
   if (cartItems.length === 0) {
     return (
