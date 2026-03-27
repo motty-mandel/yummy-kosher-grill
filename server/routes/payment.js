@@ -1,11 +1,16 @@
 import express from 'express';
 import Stripe from 'stripe';
 import dotenv from 'dotenv';
-import ordersRouter from './orders.js';
 
 dotenv.config();
 
 const router = express.Router();
+
+// Check if Stripe key is set
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error('STRIPE_SECRET_KEY environment variable is not set. Please add it to your Render environment variables.');
+}
+
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Process payment and create order
@@ -29,13 +34,19 @@ router.post('/', async (req, res) => {
     }
 
     // Charge the card using the token
-    const charge = await stripe.charges.create({
+    const chargeParams = {
       amount: Math.round(parseFloat(total) * 100), // Convert to cents
       currency: 'usd',
       source: stripeTokenId,
       description: `Order from ${customerInfo.name}`,
-      receipt_email: customerInfo.email || customerInfo.phone,
-    });
+    };
+
+    // Only add receipt_email if a valid email exists
+    if (customerInfo.email && customerInfo.email.includes('@')) {
+      chargeParams.receipt_email = customerInfo.email;
+    }
+
+    const charge = await stripe.charges.create(chargeParams);
 
     if (charge.status !== 'succeeded') {
       return res.status(400).json({ error: 'Payment declined. Please check your card details.' });
