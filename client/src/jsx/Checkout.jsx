@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { CartContext } from '../context/CartContext';
 import '../css/Checkout.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,6 +9,8 @@ const API_URL = 'https://yummy-kosher-grill.onrender.com';
 
 export default function Checkout() {
   const navigate = useNavigate();
+  const stripe = useStripe();
+  const elements = useElements();
   const {
     cartItems,
     getCartTotal,
@@ -18,10 +21,11 @@ export default function Checkout() {
     clearCart,
   } = useContext(CartContext);
 
-  const [step, setStep] = useState(1); // 1: fulfillment, 2: details, 3: review
+  const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [orderMessage, setOrderMessage] = useState(null);
   const [orderError, setOrderError] = useState(null);
+  const [cardError, setCardError] = useState(null);
 
   const handleFulfillmentChange = (type) => {
     updateOrderInfo({ fulfillmentType: type });
@@ -39,6 +43,12 @@ export default function Checkout() {
     try {
       setIsSubmitting(true);
       setOrderError(null);
+      setCardError(null);
+
+      if (!stripe || !elements) {
+        setOrderError('Payment system not loaded. Please refresh and try again.');
+        return;
+      }
 
       // Validate required fields
       if (!orderInfo.customerInfo.name || !orderInfo.customerInfo.phone) {
@@ -79,6 +89,18 @@ export default function Checkout() {
       const tax = (total * 0.0825).toFixed(2);
       const grandTotal = (parseFloat(total) + parseFloat(tax)).toFixed(2);
 
+      // Create payment token from card element
+      const cardElement = elements.getElement(CardElement);
+      const { error, token } = await stripe.createToken(cardElement, {
+        name: orderInfo.customerInfo.name,
+      });
+
+      if (error) {
+        setCardError(error.message);
+        return;
+      }
+
+      // Create order payload
       const orderPayload = {
         items: cartItems,
         customerInfo: orderInfo.customerInfo,
@@ -89,10 +111,12 @@ export default function Checkout() {
         subtotal: total,
         tax: parseFloat(tax),
         total: parseFloat(grandTotal),
+        paymentMethod: 'credit_card',
+        stripeTokenId: token.id,
       };
 
-      // Save order to backend
-      const orderResponse = await fetch(`${API_URL}/api/orders`, {
+      // Process payment and save order
+      const response = await fetch(`${API_URL}/api/payment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -100,37 +124,29 @@ export default function Checkout() {
         body: JSON.stringify(orderPayload),
       });
 
-      if (!orderResponse.ok) {
-        throw new Error('Failed to save order');
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Payment failed');
       }
 
-      const orderResult = await orderResponse.json();
-      const orderNumber = orderResult.order.orderNumber;
+      const result = await response.json();
+      const orderNumber = result.order.orderNumber;
 
-      // Print receipt
-      const printPayload = {
-        order: orderPayload,
-        orderNumber: orderNumber,
-      };
-
-      const printResponse = await fetch(`${API_URL}/api/printer/receipt`, {
+      // Print receipt (non-blocking)
+      await fetch(`${API_URL}/api/printer/receipt`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(printPayload),
-      });
-
-      if (!printResponse.ok) {
-        console.warn('Printer not connected, but order was saved');
-      }
+        body: JSON.stringify({
+          order: orderPayload,
+          orderNumber: orderNumber,
+        }),
+      }).catch(() => console.warn('Printer not connected'));
 
       // Success!
-      setOrderMessage(
-        `Order #${orderNumber} placed successfully! Redirecting...`
-      );
+      setOrderMessage(`Order #${orderNumber} placed successfully! Redirecting...`);
 
-      // Clear cart and redirect after 2 seconds
       setTimeout(() => {
         clearCart();
         navigate('/');
@@ -460,6 +476,43 @@ export default function Checkout() {
                   )}
                 </>
               )}
+            </div>
+
+            <div className="review-section">
+              <h3>Payment Information - Credit Card</h3>
+              <form>
+                <div className="form-group">
+                  <label>Card Details *</label>
+                  <div style={{
+                    padding: '12px',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px',
+                    fontSize: '14px',
+                  }}>
+                    <CardElement
+                      options={{
+                        style: {
+                          base: {
+                            fontSize: '14px',
+                            color: '#424242',
+                            '::placeholder': {
+                              color: '#9ca3af',
+                            },
+                          },
+                          invalid: {
+                            color: '#fa755a',
+                          },
+                        },
+                      }}
+                    />
+                  </div>
+                  {cardError && (
+                    <p style={{ color: '#d32f2f', fontSize: '13px', marginTop: '8px' }}>
+                      {cardError}
+                    </p>
+                  )}
+                </div>
+              </form>
             </div>
 
             <div className="checkout-buttons">

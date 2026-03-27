@@ -153,6 +153,7 @@ export default function Home() {
                                 </div>
                             ) : null}
                             
+
                             <button 
                                 className="add-to-cart-btn"
                                 onClick={() => {
@@ -168,13 +169,36 @@ export default function Home() {
                                             }
                                         });
                                     }
-                                    
                                     if (errors.length > 0) {
                                         setValidationError(errors.join(', '));
                                         return;
                                     }
-                                    
-                                    addToCart(selectedItem, 1, selectedModifiers);
+
+                                    // --- Hamburger price adjustment logic ---
+                                    let itemToAdd = { ...selectedItem };
+                                    let price = selectedItem.price;
+                                    // Only apply for burgers with size modifier
+                                    if (selectedItem.category === 'Burgers' || (selectedItem.modifiers && selectedItem.modifiers.some(m => m.name.toLowerCase().includes('size')))) {
+                                        const sizeMod = selectedItem.modifiers.find(m => m.name.toLowerCase().includes('size'));
+                                        if (sizeMod) {
+                                            const selectedSizeArr = selectedModifiers[sizeMod.name] || [];
+                                            let basePrice = 0;
+                                            // Use the lowest price as base
+                                            if (typeof price === 'string' && price.includes('-')) {
+                                                basePrice = parseFloat(price.split('-')[0].replace(/[^\d.]/g, ''));
+                                            } else {
+                                                basePrice = parseFloat((price || '').replace(/[^\d.]/g, ''));
+                                            }
+                                            let extra = 0;
+                                            if (selectedSizeArr.length > 0) {
+                                                const sizeStr = selectedSizeArr[0];
+                                                if (sizeStr.includes('220g')) extra = 4;
+                                                if (sizeStr.includes('300g')) extra = 8;
+                                            }
+                                            itemToAdd.price = `$${(basePrice + extra).toFixed(2)}`;
+                                        }
+                                    }
+                                    addToCart(itemToAdd, 1, selectedModifiers);
                                     setSelectedItem(null);
                                     setSelectedModifiers({});
                                     setValidationError(null);
