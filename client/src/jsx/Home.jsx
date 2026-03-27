@@ -40,8 +40,7 @@ export default function Home() {
                     </h3>
                     <h6>
                         Opening Hours <br />
-                        Sunday: 12PM - 8PM <br />
-                        Monday - Thursday: 12PM - 8PM <br />
+                        Sunday - Thursday: 12PM - 8PM <br />
                         Friday: Closed
                     </h6>
                 </div>

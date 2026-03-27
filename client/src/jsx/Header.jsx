@@ -17,14 +17,9 @@ export default function Header() {
                 <img src={logo} alt="yummy-logo" className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }} />
             </div>
 
-            {/* <div className="fulfil">
-                <button>Change</button>
-                <p>Pickup at 12:00 PM</p>
-            </div> */}
-
             <div className="cart">
                 <button onClick={() => setIsCartOpen(!isCartOpen)} className="cart-button">
-                    <FaCartShopping size={30} />
+                    <FaCartShopping size={30} color="#cf5a00"/>
                     {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
                 </button>
             </div>
