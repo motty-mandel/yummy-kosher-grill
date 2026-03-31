@@ -7,28 +7,32 @@
         "item": "Ara'yes / עראייס",
         "description": "Ground beef seasoned with a blend of spices, stuffed inside pita bread, and grilled to perfection.",
         "price": "$9.00",
-        "image": "https://www.fbgcdn.com/pictures/5791e14e-b1d2-4411-9bf6-d41fb436a65a_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/5791e14e-b1d2-4411-9bf6-d41fb436a65a_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "2",
         "item": "Cigars / סיגרים",
         "description": "5 hand-rolled thin pastry filled with mashed potato and a blend of spices, offering a crispy exterior and rich, savory flavor.",
         "price": "$9.00",
-        "image": "https://www.fbgcdn.com/pictures/d941b827-70eb-4571-a49c-b03a9e43a597_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/d941b827-70eb-4571-a49c-b03a9e43a597_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "3",
         "item": "Chicken Wings / כנפיים",
         "description": "5 bone-in chicken wings grilled with a kick.",
         "price": "$9.00",
-        "image": "https://www.fbgcdn.com/pictures/896049ad-c9ad-4e75-b3ed-56b90661ebdf_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/896049ad-c9ad-4e75-b3ed-56b90661ebdf_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "4",
         "item": "Fried Kibbeh / קובה בורגול",
         "description": "Mushroom stuffed in a bulgur wheat shell, shaped into crispy, golden-brown ovals for a delightful crunch.",
         "price": "$9.00",
-        "image": "https://www.fbgcdn.com/pictures/2521af84-20a7-4ca7-bb95-ab662a60cf39_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/2521af84-20a7-4ca7-bb95-ab662a60cf39_d3.jpg",
+        "outOfStock": false
       }
     ]
   },
@@ -40,21 +44,24 @@
         "item": "Homemade Hummus / חומוס הבית",
         "description": "A creamy blend of chickpeas and tahini, accentuated with a hint of garlic, served with a drizzle of olive oil and a sprinkle of paprika. Served with a fresh pita.",
         "price": "$12.00",
-        "image": "https://www.fbgcdn.com/pictures/10890e03-586b-4753-bb30-778700cc0435_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/10890e03-586b-4753-bb30-778700cc0435_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "6",
         "item": "Hummus & Falafel / חומוס ופלאפל",
         "description": "Falafel and hummus plate. Served with a fresh pita.",
         "price": "$14.00",
-        "image": "https://www.fbgcdn.com/pictures/2041a6af-fe6d-4899-9754-af8add9982e8_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/2041a6af-fe6d-4899-9754-af8add9982e8_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "7",
         "item": "Hummus & Shawarma / חומוס ושווארמה",
         "description": "Creamy hummus topped with tender, spiced shawarma, accompanied by some pickled vegetables. Served with fresh pita bread.",
         "price": "$16.00",
-        "image": "https://www.fbgcdn.com/pictures/3f1c8004-54ca-4769-9e7a-d669ae69ca99_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/3f1c8004-54ca-4769-9e7a-d669ae69ca99_d3.jpg",
+        "outOfStock": false
       }
     ]
   },
@@ -67,6 +74,7 @@
         "description": "Fried eggplants, boiled egg, sliced potato with your choice of toppings. Comes with French Fries.",
         "price": "$10.00",
         "image": "https://www.fbgcdn.com/pictures/f7e69a33-fce0-425b-bbbe-7c0e7fc65ba0_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -87,6 +95,7 @@
         "description": "Thin slice of meat, pounded tender, breaded, and then fried. Comes with French Fries.",
         "price": "$15.00",
         "image": "https://www.fbgcdn.com/pictures/95603e4f-f71c-40cc-ab95-5f9060875bb7_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -107,6 +116,7 @@
         "description": "Falafel balls stuffed in a pita or baguette with your choice of salads. Comes with French Fries.",
         "price": "$10.00",
         "image": "https://www.fbgcdn.com/pictures/ff2eee74-f38d-4ed7-a4a2-d3222b19ec35_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -127,6 +137,7 @@
         "description": "Thinly sliced meat that has been slowly roasted and served inside of the bread of your choice with salads. Comes with French Fries.",
         "price": "$15.00",
         "image": "https://www.fbgcdn.com/pictures/d765f300-1a5c-45c7-a108-6653b425547e_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -147,6 +158,7 @@
         "description": "Grilled Chicken placed inside of Pita Bread. Comes with French Fries.",
         "price": "$15.00",
         "image": "https://www.fbgcdn.com/pictures/7c1b82bd-3ecb-4e70-a76e-88becd466c73_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -167,6 +179,7 @@
         "description": "Grilled Chicken placed inside of Pita Bread. Comes with French Fries.",
         "price": "$15.00",
         "image": "https://www.fbgcdn.com/pictures/ca3c64b5-59a9-4ce6-a184-3a7c0581ca28_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -187,6 +200,7 @@
         "description": "Grilled Kabab inside of Pita Bread. Comes with French Fries.",
         "price": "$15.00",
         "image": "https://www.fbgcdn.com/pictures/461ea1d1-502c-420b-86df-dad6c30c42fc_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Extra Salads",
@@ -212,6 +226,7 @@
         "description": "Beef patty grilled to your perfection. Served on a bun with French Fries.",
         "price": "$18.00 - $26.00",
         "image": "https://www.fbgcdn.com/pictures/95fe102b-7918-436c-a3ad-a143411e6c51_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Size (Required)",
@@ -246,6 +261,7 @@
         "description": "Beef patty grilled to your perfection with an egg on top. Served in a bun with French Fries.",
         "price": "$21.00 - $29.00",
         "image": "https://www.fbgcdn.com/pictures/0e886809-6019-4ac0-aae9-9d8aadfcacca_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Size (Required)",
@@ -280,6 +296,7 @@
         "description": "Beef patty grilled to your perfection with Fried Onions placed on top. Served in a bun with French Fries.",
         "price": "$21.00 - $28.00",
         "image": "https://www.fbgcdn.com/pictures/3e2a1c61-2b3d-44a6-9bb5-11b3bd2e4b0b_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Size (Required)",
@@ -314,6 +331,7 @@
         "description": "Beef patty grilled to your perfection with Grilled Mushrooms placed on top. Served in a bun with French Fries.",
         "price": "$21.00 - $29.00",
         "image": "https://www.fbgcdn.com/pictures/ee2c0651-7215-43e3-a50f-138c9afaa7a9_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Size (Required)",
@@ -348,6 +366,7 @@
         "description": "Vegetarian burger served in a bun with French Fries.",
         "price": "$21.00",
         "image": "https://www.fbgcdn.com/pictures/7718e78a-1d54-46b8-aac4-76323cd8cf3c_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Size (Required)",
@@ -387,6 +406,7 @@
         "description": "A Plate of Grilled Salmon with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$22.00",
         "image": "https://www.fbgcdn.com/pictures/4aab9d56-56db-4ff6-b0ef-91192f49cc2f_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -407,6 +427,7 @@
         "description": "A Plate of Shawarma meat with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
         "image": "https://www.fbgcdn.com/pictures/5e35daff-4ae1-4aaf-80da-7cf4d378d85f_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -427,6 +448,7 @@
         "description": "A Plate of Roasted Chicken with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
         "image": "https://www.fbgcdn.com/pictures/39d77124-517e-4409-af20-717907a72d01_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -447,6 +469,7 @@
         "description": "A Plate of a thin, pounded, and breaded pan-fried meat with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
         "image": "https://www.fbgcdn.com/pictures/b4153176-a7d4-4dc7-b2d7-bc60d3bdc37b_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -467,6 +490,7 @@
         "description": "A Plate of Grilled Chicken with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$22.00",
         "image": "https://www.fbgcdn.com/pictures/239dc26b-0af0-40cc-ba9f-2ae267c398f9_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -487,6 +511,7 @@
         "description": "A Plate of Kabab with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$23.00",
         "image": "https://www.fbgcdn.com/pictures/de22f483-9cdf-4756-98e3-3624500c755d_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -507,6 +532,7 @@
         "description": "A Plate of Ribeye Steak grilled to your perfection. Served with your choice of two sides from rice, french fries and israeli salad.",
         "price": "$38.00",
         "image": "https://www.fbgcdn.com/pictures/5dc98a4f-2982-4547-849e-86313cae7cb2_d3.jpg",
+        "outOfStock": false,
         "modifiers": [
           {
             "name": "Plate sides / תוספות לצלחת (Required)",
@@ -531,77 +557,88 @@
         "item": "Hummus / חומוס",
         "description": "A Bowl of some creamy Hummus",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/37e4d200-3830-4e07-ab80-1a6d0dd36fa2_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/37e4d200-3830-4e07-ab80-1a6d0dd36fa2_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "28",
         "item": "Tahini / טחינה",
         "description": "A Sesame Seed Paste to add some flavor",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/3689e69c-35fb-4dfc-a704-c96585b13832_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/3689e69c-35fb-4dfc-a704-c96585b13832_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "29",
         "item": "Purple Cabbage / כרוב סגול",
         "description": "Purple Cabbage to add some color to your plate",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/19ee941c-c649-484e-bcb3-49dd27c92b8e_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/19ee941c-c649-484e-bcb3-49dd27c92b8e_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "30",
         "item": "White Cabbage / כרוב לבן",
         "description": "White Cabbage fresh and crisp",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/1ab1f481-3e32-4998-933d-026c1c662e69_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/1ab1f481-3e32-4998-933d-026c1c662e69_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "31",
         "item": "Matbucha / מטבוחה",
         "description": "A savory blend of ripe tomatoes and roasted bell peppers, simmered with a mix of aromatic spices.",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/effbf99b-a074-4e99-a783-9ac28cdcc3ee_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/effbf99b-a074-4e99-a783-9ac28cdcc3ee_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "32",
         "item": "Beets / סלק",
         "description": "Fresh roasted Beets",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/17042cb3-6f31-45fa-bc70-88ed8277168e_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/17042cb3-6f31-45fa-bc70-88ed8277168e_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "33",
         "item": "Spicy Carrots / גזר חריף",
         "description": "Plate of Shredded Spicy Carrots",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/a610bae4-2624-45e7-8bcc-6c5595baf972_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/a610bae4-2624-45e7-8bcc-6c5595baf972_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "34",
         "item": "Fried Eggplant / חציל מטוגן",
         "description": "Fried Eggplant",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/f9906fdf-2ddd-4627-b33d-e5e583153d9c_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/f9906fdf-2ddd-4627-b33d-e5e583153d9c_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "35",
         "item": "Corn / סלט תירס",
         "description": "Corn Salad",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/e82bec5f-91a3-4d03-880a-ae6436bcd506_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/e82bec5f-91a3-4d03-880a-ae6436bcd506_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "36",
         "item": "Olive Dip / סלי זיתים",
         "description": "A tasty spread of chopped olives",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/cfeadbcb-d228-4fa4-9d3d-cc87aa217998_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/cfeadbcb-d228-4fa4-9d3d-cc87aa217998_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "37",
         "item": "Egg Salad / סלט ביצים",
         "description": "Egg Salad",
         "price": "$4.00",
-        "image": "https://www.fbgcdn.com/pictures/d7e142ba-f972-40a5-b12a-9f8b460b96c1_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/d7e142ba-f972-40a5-b12a-9f8b460b96c1_d3.jpg",
+        "outOfStock": false
       }
     ]
   },
@@ -613,35 +650,40 @@
         "item": "Coke / קולה",
         "description": "A can of coke",
         "price": "$5.00",
-        "image": "https://www.fbgcdn.com/pictures/a84e368c-12ad-412e-ab37-df0121824595_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/a84e368c-12ad-412e-ab37-df0121824595_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "40",
         "item": "Coke Zero / קולה זירו",
         "description": "A can of coke zero",
         "price": "$5.00",
-        "image": "https://www.fbgcdn.com/pictures/cf2e6d72-0cb1-4d0d-9a6c-be0f8fde5dd4_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/cf2e6d72-0cb1-4d0d-9a6c-be0f8fde5dd4_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "41",
         "item": "Sprite / ספרייט",
         "description": "A can of sprite",
         "price": "$5.00",
-        "image": "https://www.fbgcdn.com/pictures/8083f4fb-35eb-4f43-9033-b873c93d5138_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/8083f4fb-35eb-4f43-9033-b873c93d5138_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "42",
         "item": "Water / בקבוק מים",
         "description": "A bottle of water",
         "price": "$5.00",
-        "image": "https://www.fbgcdn.com/pictures/74caba67-8011-404c-972f-7183c4d91a08_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/74caba67-8011-404c-972f-7183c4d91a08_d3.jpg",
+        "outOfStock": false
       },
       {
         "id": "43",
         "item": "Seltzer / סודה",
         "description": "A can of seltzer",
         "price": "$5.00",
-        "image": "https://www.fbgcdn.com/pictures/b878e98e-9780-4a71-82de-6a22b88f9bb9_d3.jpg"
+        "image": "https://www.fbgcdn.com/pictures/b878e98e-9780-4a71-82de-6a22b88f9bb9_d3.jpg",
+        "outOfStock": false
       }
     ]
   }

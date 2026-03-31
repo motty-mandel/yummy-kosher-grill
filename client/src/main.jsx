@@ -7,6 +7,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import App from './App.jsx';
 import Home from './jsx/Home.jsx';
 import Checkout from './jsx/Checkout.jsx';
+import Admin from './jsx/Admin.jsx';
+import AdminDiagnostics from './jsx/AdminDiagnostics.jsx';
 
 const stripePromise = loadStripe('pk_test_51Pwu4R08itiWYv2Z477neCpMwwy77S6L0S3gEgpfpvJSfvg5uH5CiwdfpW2UArLWWW1rM1UWVKBRmLZiP9bVRWar00bLJ0QJJr'); // Replace with your key
 
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
             <Checkout />
           </Elements>
         )
+      },
+      {
+        path: 'admin',
+        element: <Admin />
+      },
+      {
+        path: 'admin/diagnostics',
+        element: <AdminDiagnostics />
       }
     ]
   }

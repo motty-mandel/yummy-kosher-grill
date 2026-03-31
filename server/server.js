@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import ordersRouter from './routes/orders.js';
 import printerRouter from './routes/printer.js';
 import paymentRouter from './routes/payment.js';
+import adminRouter from './routes/admin.js';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use('/api/orders', ordersRouter);
 app.use('/api/printer', printerRouter);
 app.use('/api/payment', paymentRouter);
+app.use('/api/admin', adminRouter);
 
 // Health check
 app.get('/api/health', (req, res) => {

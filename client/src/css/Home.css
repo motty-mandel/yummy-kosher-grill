@@ -1,3 +1,29 @@
+.menu-closed-banner {
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-closed-banner h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.menu-closed-banner p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.menu-closed-content {
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+    font-size: 18px;
+}
+
 .hero {
     overflow: hidden;
 }
@@ -297,4 +323,22 @@
 
 .add-to-cart-btn:hover {
     background-color: #994200;
+}
+
+.add-to-cart-btn:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.add-to-cart-btn:disabled:hover {
+    background-color: #9e9e9e;
+}
+
+/* Out of Stock Styles */
+.menu-item.out-of-stock {
+    pointer-events: none;
+}
+
+.menu-item.out-of-stock:hover {
+    transform: none;
 }

@@ -11,7 +11,28 @@ export default function Home() {
     const [selectedItem, setSelectedItem] = useState(null);
     const [selectedModifiers, setSelectedModifiers] = useState({});
     const [validationError, setValidationError] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(true);
+    const [loadingStatus, setLoadingStatus] = useState(true);
     const { addToCart } = useContext(CartContext);
+
+    useEffect(() => {
+        fetchMenuStatus();
+    }, []);
+
+    const fetchMenuStatus = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/api/admin/menu-status');
+            if (response.ok) {
+                const data = await response.json();
+                setMenuOpen(data.isOpen);
+            }
+        } catch (error) {
+            console.log('Could not fetch menu status, assuming open');
+            setMenuOpen(true);
+        } finally {
+            setLoadingStatus(false);
+        }
+    };
 
     useEffect(() => {
         if (selectedItem) {
@@ -29,6 +50,12 @@ export default function Home() {
 
     return (
         <>
+            {!menuOpen && (
+                <div className="menu-closed-banner">
+                    <h2>🔴 Menu Closed</h2>
+                    <p>The restaurant is currently closed. Please check back during business hours.</p>
+                </div>
+            )}
             <div className="hero d-flex align-items-center justify-content-center">
                 <div className="info d-flex flex-column align-items-center position-absolute">
                     <h6>
@@ -46,29 +73,39 @@ export default function Home() {
                 </div>
                 <img src="grill-food.jpg" alt="picture-of-grilled-food" />
             </div>
-            {menuList.map((category) => (
-                <div className="categories" key={category.category}>
-                    <h2 className="my-2 mx-5">{category.category}</h2>
-                    <div className="menu-items-wrapper">
-                        {category.items.map((menuItems) => (
-                            <div 
-                                key={menuItems.id} 
-                                className={`menu-item d-flex flex-row justify-content-between ${activeId === menuItems.id ? 'active' : ''}`}
-                                onClick={() => setSelectedItem(menuItems)}
-                            >
-                                <div className="itemInfo">
-                                    <h5>{menuItems.item}</h5>
-                                    <h6>{menuItems.price}</h6>
-                                    <h6 className="description">{menuItems.description}</h6>
-                                </div>
-                                <div className="itemImage">
-                                    <img src={menuItems.image} alt="menu-item-photo" />
-                                </div>
+            {menuOpen ? (
+                <>
+                    {menuList.map((category) => (
+                        <div className="categories" key={category.category}>
+                            <h2 className="mt-5 mb-2 mx-5">{category.category}</h2>
+                            <div className="menu-items-wrapper">
+                                {category.items.map((menuItems) => (
+                                    <div 
+                                        key={menuItems.id} 
+                                        className={`menu-item d-flex flex-row justify-content-between ${activeId === menuItems.id ? 'active' : ''} ${menuItems.outOfStock ? 'out-of-stock' : ''}`}
+                                        onClick={() => !menuItems.outOfStock && setSelectedItem(menuItems)}
+                                        style={{ opacity: menuItems.outOfStock ? '0.6' : '1', cursor: menuItems.outOfStock ? 'not-allowed' : 'pointer' }}
+                                    >
+                                        <div className="itemInfo">
+                                            <h5>{menuItems.item}</h5>
+                                            <h6>{menuItems.price}</h6>
+                                            <h6 className="description">{menuItems.description}</h6>
+                                            {menuItems.outOfStock && <span className="badge bg-danger">Out of Stock</span>}
+                                        </div>
+                                        <div className="itemImage">
+                                            <img src={menuItems.image} alt="menu-item-photo" />
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
+                </>
+            ) : (
+                <div className="menu-closed-content">
+                    <p>Menu items are not available at this time.</p>
                 </div>
-            ))}
+            )}
             
             {selectedItem && (
                 <div className="modal-overlay" onClick={() => setSelectedItem(null)}>
@@ -84,7 +121,13 @@ export default function Home() {
                             <p className="description">{selectedItem.description}</p>
                             <p className="price">{selectedItem.price}</p>
                             
-                            {selectedItem.modifiers && selectedItem.modifiers.length > 0 ? (
+                            {selectedItem.outOfStock && (
+                                <div className="alert alert-danger mb-3">
+                                    This item is currently out of stock.
+                                </div>
+                            )}
+                            
+                            {!selectedItem.outOfStock && selectedItem.modifiers && selectedItem.modifiers.length > 0 ? (
                                 <div className="modifiers-section">
                                     <h4>Modify Your Order</h4>
                                     {selectedItem.modifiers.map((modifier) => {
@@ -155,7 +198,10 @@ export default function Home() {
 
                             <button 
                                 className="add-to-cart-btn"
+                                disabled={selectedItem.outOfStock}
                                 onClick={() => {
+                                    if (selectedItem.outOfStock) return;
+                                    
                                     // Validate required modifiers
                                     const errors = [];
                                     if (selectedItem.modifiers) {
@@ -203,7 +249,7 @@ export default function Home() {
                                     setValidationError(null);
                                 }}
                             >
-                                Add to Cart
+                                {selectedItem.outOfStock ? 'Out of Stock' : 'Add to Cart'}
                             </button>
                             
                             {validationError && (

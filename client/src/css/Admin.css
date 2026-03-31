@@ -1,0 +1,390 @@
+/* Admin Dashboard Styles */
+
+.admin-login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-box button:hover {
+  background: #764ba2;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Admin Dashboard */
+
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header h1 {
+  color: #333;
+  margin: 0;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background: #cf5a00;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #a34600;
+}
+
+.save-message {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.save-message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #2e7d32;
+}
+
+.save-message.error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+}
+
+.admin-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+  margin: 0 0 20px 0;
+  color: #333;
+  border-bottom: 2px solid #cf5a00;
+  padding-bottom: 10px;
+}
+
+/* Menu Status Section */
+
+.menu-status-section {
+  max-width: 600px;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #cf5a00;
+}
+
+.status-display {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.status-display p {
+  margin: 0;
+  font-weight: bold;
+  color: #666;
+}
+
+.status-badge {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.status-badge.open {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-badge.closed {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.toggle-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-btn.close-menu {
+  background: #d32f2f;
+  color: white;
+}
+
+.toggle-btn.close-menu:hover {
+  background: #b71c1c;
+}
+
+.toggle-btn.open-menu {
+  background: #2e7d32;
+  color: white;
+}
+
+.toggle-btn.open-menu:hover {
+  background: #1b5e20;
+}
+
+/* Items Section */
+
+.items-section {
+  margin-top: 25px;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #cf5a00;
+}
+
+.loading,
+.no-items {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.category-section {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.category-title {
+  margin: 0 0 15px 0;
+  color: #cf5a00;
+  font-size: 18px;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.item-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+.item-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #cf5a00;
+}
+
+.item-card.out-of-stock {
+  background: #fff3e0;
+  border-color: #ff9800;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.item-info h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-price {
+  margin: 0;
+  color: #cf5a00;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.stock-indicator {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.stock-indicator.in {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.stock-indicator.out {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.stock-toggle-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.stock-toggle-btn.mark-unavailable {
+  background: #d32f2f;
+  color: white;
+}
+
+.stock-toggle-btn.mark-unavailable:hover {
+  background: #b71c1c;
+}
+
+.stock-toggle-btn.mark-available {
+  background: #2e7d32;
+  color: white;
+}
+
+.stock-toggle-btn.mark-available:hover {
+  background: #1b5e20;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-header h1 {
+    font-size: 20px;
+  }
+
+  .status-card {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .toggle-btn {
+    width: 100%;
+  }
+
+  .items-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .search-box input {
+    max-width: 100%;
+  }
+}
