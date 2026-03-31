@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import menuList from '../menus/menu.json';
 import { CartContext } from '../context/CartContext';
+import API_BASE_URL from '../config.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Home.css';
 import '../cssMobile/homeMobile.css';
@@ -21,7 +22,7 @@ export default function Home() {
 
     const fetchMenuStatus = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/admin/menu-status');
+            const response = await fetch(`${API_BASE_URL}/menu-status`);
             if (response.ok) {
                 const data = await response.json();
                 setMenuOpen(data.isOpen);

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { ADMIN_API_BASE } from '../config.js';
 
 export default function AdminDiagnostics() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = 'http://localhost:5000/api/admin';
+  const API_BASE = ADMIN_API_BASE;
+  const SERVER_BASE = API_BASE.substring(0, API_BASE.lastIndexOf('/api')); // Remove /api to get server base
+
 
   const addResult = (test, status, message, details = '') => {
     setResults(prev => [...prev, { test, status, message, details, time: new Date().toLocaleTimeString() }]);
@@ -18,7 +21,7 @@ export default function AdminDiagnostics() {
       // Test 1: Server Health
       addResult('Server Connection', 'testing', 'Testing if server is running...');
       try {
-        const healthResponse = await fetch('http://localhost:5000/api/health', { method: 'GET' });
+        const healthResponse = await fetch(`${SERVER_BASE}/api/health`, { method: 'GET' });
         if (healthResponse.ok) {
           addResult('Server Connection', 'success', 'Server is running ✓');
         } else {
