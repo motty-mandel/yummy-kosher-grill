@@ -12,7 +12,7 @@ export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Simple password check
-  const ADMIN_PASSWORD = '770Rebbe770!'; // TODO: Change this to a secure method
+  const ADMIN_PASSWORD = '770Rebbe770!';
 
   const handleLogin = () => {
     if (password === ADMIN_PASSWORD) {
