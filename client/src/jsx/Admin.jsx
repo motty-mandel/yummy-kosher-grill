@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import API_BASE_URL from '../config.js';
+import { ADMIN_API_BASE } from '../config.js';
 import '../css/Admin.css';
 
 export default function Admin() {
@@ -33,7 +33,7 @@ export default function Admin() {
 
   const fetchMenuStatus = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/menu-status`);
+      const response = await fetch(`${ADMIN_API_BASE}/menu-status`);
       if (response.ok) {
         const data = await response.json();
         setMenuOpen(data.isOpen);
@@ -48,7 +48,7 @@ export default function Admin() {
   const fetchMenuItems = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE_URL}/menu-items`);
+      const response = await fetch(`${ADMIN_API_BASE}/menu-items`);
       if (response.ok) {
         const data = await response.json();
         console.log('Fetched menu items:', data);
@@ -67,7 +67,7 @@ export default function Admin() {
 
   const toggleMenuStatus = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/menu-status`, {
+      const response = await fetch(`${ADMIN_API_BASE}/menu-status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export default function Admin() {
 
   const toggleOutOfStock = async (itemId, currentStatus) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/menu-items/${itemId}`, {
+      const response = await fetch(`${ADMIN_API_BASE}/menu-items/${itemId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
