@@ -6,6 +6,10 @@
     "serverInstall": "cd server && npm install",
     "serverStart": "cd server && npm run dev",
     "build": "cd client && npm install && npm run build",
+    "start": "node serve-client.js",
     "clientStart": "cd client && npm run dev"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
