@@ -23,7 +23,7 @@ export default function Home() {
 
     const fetchMenuItems = async () => {
         try {
-            const response = await fetch(`${API_BASE_URL}/admin/menu-items`);
+            const response = await fetch(`${API_BASE_URL}/menu-items`);
             if (response.ok) {
                 const data = await response.json();
                 setMenuList(data);
