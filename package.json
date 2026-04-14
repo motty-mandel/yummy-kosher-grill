@@ -5,7 +5,7 @@
   "scripts": {
     "serverInstall": "cd server && npm install",
     "serverStart": "cd server && npm run dev",
-    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "build": "cd client && npm install && npm run build",
     "clientStart": "cd client && npm run dev"
   }
 }
