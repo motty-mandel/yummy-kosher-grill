@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import menuList from '../menus/menu.json';
 import { CartContext } from '../context/CartContext';
 import API_BASE_URL from '../config.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,11 +13,25 @@ export default function Home() {
     const [validationError, setValidationError] = useState(null);
     const [menuOpen, setMenuOpen] = useState(true);
     const [loadingStatus, setLoadingStatus] = useState(true);
+    const [menuList, setMenuList] = useState([]);
     const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         fetchMenuStatus();
+        fetchMenuItems();
     }, []);
+
+    const fetchMenuItems = async () => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/admin/menu-items`);
+            if (response.ok) {
+                const data = await response.json();
+                setMenuList(data);
+            }
+        } catch (error) {
+            console.log('Could not fetch menu items');
+        }
+    };
 
     const fetchMenuStatus = async () => {
         try {
